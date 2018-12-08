@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PhotonConnect : MonoBehaviour
 {
-    [SerializeField] GameObject CameraObj;
+    [SerializeField] GameObject Obj;
  
     void Start()
     {
@@ -26,7 +26,7 @@ public class PhotonConnect : MonoBehaviour
     void OnJoinedRoom()
     {
         Debug.Log("ルームへ入室しました。");
-        PhotonNetwork.Instantiate(CameraObj.name,transform.position,transform.rotation,0);
+        PhotonNetwork.Instantiate(Obj.name,new Vector3(0,0,0),transform.rotation,0);
         //Resourcesの中にある生成プレハブの名前
 
     }

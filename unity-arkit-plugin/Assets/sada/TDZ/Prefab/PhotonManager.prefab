@@ -9,59 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1724062287745198}
+  m_RootGameObject: {fileID: 1529342335583630}
   m_IsPrefabAsset: 1
---- !u!1 &1724062287745198
+--- !u!1 &1529342335583630
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4746575772867696}
-  - component: {fileID: 114791101310285508}
-  - component: {fileID: 114316518490422334}
+  - component: {fileID: 4585703280959394}
+  - component: {fileID: 114435540854939272}
   m_Layer: 0
-  m_Name: WorldOrigin
+  m_Name: PhotonManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4746575772867696
+--- !u!4 &4585703280959394
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1724062287745198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1529342335583630}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114316518490422334
+--- !u!114 &114435540854939272
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1724062287745198}
+  m_GameObject: {fileID: 1529342335583630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50902cdca92cd4d41ba70ac239d10309, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f52572ad32974e3e90e3949a8b33b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreateObj:
-  - {fileID: 1529342335583630, guid: d0ba278290bc94068be2585a23b67d17, type: 2}
---- !u!114 &114791101310285508
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1724062287745198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f9f5c8de44445b8ac964601c22376d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Obj: {fileID: 1618622854093076, guid: 10ceafdadd5c54ac79e9449644a9c98d, type: 2}
