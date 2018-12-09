@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.AI;
 
-public class Move : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     private NavMeshAgent agent;
 
@@ -27,12 +27,11 @@ public class Move : MonoBehaviour
         {
             ray = new Ray(m_camera.position, m_camera.forward);
             //ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Debug.DrawLine(ray.origin, ray.direction * 100f, Color.red);
+            //Debug.DrawLine(ray.origin, ray.direction * 100f, Color.red);
             if (Physics.Raycast(ray, out hit, 100f))
             {
                 agent.SetDestination(hit.point);
                 HitPosition.transform.position = hit.point;
-                Debug.Log(hit.point);
             }
         }
     }

@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PhotonConnect : MonoBehaviour
 {
-    [SerializeField] GameObject Obj;
+    [SerializeField] GameObject Player,Atacker,debugEnemy;
+    int RoomCount = 0;
  
     void Start()
     {
@@ -26,8 +27,28 @@ public class PhotonConnect : MonoBehaviour
     void OnJoinedRoom()
     {
         Debug.Log("ルームへ入室しました。");
-        PhotonNetwork.Instantiate(Obj.name,new Vector3(0,0,0),transform.rotation,0);
-        //Resourcesの中にある生成プレハブの名前
+        if (PhotonNetwork.countOfPlayersInRooms == 0)
+        {
+            PhotonNetwork.Instantiate(Player.name, new Vector3(0, 0, 0), transform.rotation, 0);
+            //Resourcesの中にある生成プレハブの名前
+            // デバッグ
+            PhotonNetwork.Instantiate(debugEnemy.name, new Vector3(0, 0, 0), transform.rotation, 0);
+        }
+        else if(PhotonNetwork.countOfPlayersInRooms == 1)
+        {
+            PhotonNetwork.Instantiate(Atacker.name, new Vector3(0, 0, 0), transform.rotation, 0);
+
+        }
+        else
+        {
+            Debug.Log("満員です");
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.CreateRoom("ARKitShare" + RoomCount.ToString());
+            RoomCount++;
+        }
+
+
+
 
     }
 
@@ -38,6 +59,7 @@ public class PhotonConnect : MonoBehaviour
 
         // ルームがないと入室に失敗するため、その時は自分で作る
         // 引数でルーム名を指定できる
-        PhotonNetwork.CreateRoom("ARKitShare");
+        PhotonNetwork.CreateRoom("ARKitShare" + RoomCount.ToString());
+        RoomCount++;
     }
 }

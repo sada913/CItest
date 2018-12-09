@@ -51,4 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f52572ad32974e3e90e3949a8b33b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Obj: {fileID: 1618622854093076, guid: 10ceafdadd5c54ac79e9449644a9c98d, type: 2}
+  Player: {fileID: 1618622854093076, guid: 10ceafdadd5c54ac79e9449644a9c98d, type: 2}
+  Atacker: {fileID: 1618622854093076, guid: db19960c30bda420a99f494958f253e7, type: 2}
+  debugEnemy: {fileID: 1024060652664252, guid: 1422c04a506094cd69e08c361d8977ca, type: 2}
