@@ -15,7 +15,8 @@ public class CreateBomb : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         var phase = GodTouch.GetPhase();
-        if(phase == GodPhase.Began)
+
+        if(phase == GodPhase.Began && Input.touchCount == 1)
         { 
             if(m_PhotonView.isMine)
             {

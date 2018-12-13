@@ -27,13 +27,19 @@ public class PhotonConnect : MonoBehaviour
     void OnJoinedRoom()
     {
         Debug.Log("ルームへ入室しました。");
+
+        // Player生成
         if (PhotonNetwork.countOfPlayersInRooms == 0)
         {
-            PhotonNetwork.Instantiate(Player.name, new Vector3(0, 0, 0), transform.rotation, 0);
+            var player = PhotonNetwork.Instantiate(Player.name, new Vector3(0, 0, 0), transform.rotation, 0);
+            GameMaster.Instance.Player = player;
+
             //Resourcesの中にある生成プレハブの名前
-            // デバッグ
-            PhotonNetwork.Instantiate(debugEnemy.name, new Vector3(0, 0, 0), transform.rotation, 0);
+            // デバッグの敵
+            //PhotonNetwork.Instantiate(debugEnemy.name, new Vector3(0, 0, 0), transform.rotation, 0);
         }
+
+
         else if(PhotonNetwork.countOfPlayersInRooms == 1)
         {
             PhotonNetwork.Instantiate(Atacker.name, new Vector3(0, 0, 0), transform.rotation, 0);

@@ -26,9 +26,10 @@ GameObject:
   - component: {fileID: 114445052411374426}
   - component: {fileID: 195841122592110052}
   - component: {fileID: 114866167164186818}
+  - component: {fileID: 54897744266129940}
   m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -88,6 +89,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618622854093076}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54897744266129940
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1618622854093076}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65394790607245390
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -95,7 +111,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618622854093076}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -214,7 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a684c46bdb97149bf89366cec47a30b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 1
   HitPosition: {fileID: 1082905953721186, guid: 9bc336b55e94b4aeeb050d50bdfef3a7,
     type: 2}
 --- !u!195 &195841122592110052
@@ -226,7 +241,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.5
+  m_Speed: 0.7
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120

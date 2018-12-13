@@ -36,4 +36,7 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupItems
   - RequestForPickupTimes
+  - DestoroyObj
+  - NonAtack
+  - EnemyAtack
   DisableAutoOpenWizard: 1
