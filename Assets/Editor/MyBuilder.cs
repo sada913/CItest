@@ -14,7 +14,7 @@ public class MyBuilder {
 				allScene.Add (scene.path);
 			}
 		}
-		PlayerSettings.bundleIdentifier = "com.yourcompany.newgame";
+		PlayerSettings.applicationIdentifier = "com.yourcompany.newgame";
         	PlayerSettings.statusBarHidden = true;
         	BuildPipeline.BuildPlayer( 
             		allScene.ToArray(),
@@ -27,7 +27,7 @@ public class MyBuilder {
 	// ビルド実行でiOS用のXcodeプロジェクトを作成する例
 	[UnityEditor.MenuItem("Tools/Build Project AllScene iOS")]
 	public static void BuildProjectAllSceneiOS() {	
-		EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTarget.iOS);
+		EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.iOS,BuildTarget.iOS);
 		List<string> allScene = new List<string>();
 		foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes) {
 			if (scene.enabled) {
@@ -42,16 +42,15 @@ public class MyBuilder {
 
 		//BUILD for Device
 		PlayerSettings.iOS.sdkVersion = iOSSdkVersion.DeviceSDK;
-		PlayerSettings.bundleIdentifier = "com.yourcompany.newgame";
+		PlayerSettings.applicationIdentifier = "com.sdatoworks.newgame";
 		PlayerSettings.statusBarHidden = true;
-		string errorMsg_Device = BuildPipeline.BuildPlayer (
+		var errorMsg_Device = BuildPipeline.BuildPlayer (
 						allScene.ToArray(),
 						"project",
-						BuildTarget.iOS,
-			                        opt
+						BuildTarget.iOS,opt
 		                         );
 
-		if (string.IsNullOrEmpty (errorMsg_Device)) {
+		if (errorMsg_Device.summary.result == UnityEditor.Build.Reporting.BuildResult.Failed) {
 		} else {
 			// エラー処理
 		}
