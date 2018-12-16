@@ -8,7 +8,7 @@ WORKSPACE=`pwd`
 SCHEME=project
 CONFIGURATION=Debug # Debug, Release and so on
 
-PROVISIONING_NAME=1
+PROVISIONING_NAME=16d85a31-6ca2-49ca-8226-be76652ab9e7
 IPA_FILE_NAME=develop-adhoc.ipa
 iOS_SDK=iphoneos
 
