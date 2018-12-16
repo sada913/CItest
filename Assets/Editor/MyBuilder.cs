@@ -46,7 +46,7 @@ public class MyBuilder {
 		PlayerSettings.statusBarHidden = true;
 		var errorMsg_Device = BuildPipeline.BuildPlayer (
 						allScene.ToArray(),
-						"project",
+						"iOS",
 						BuildTarget.iOS,opt
 		                         );
 
