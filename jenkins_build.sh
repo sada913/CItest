@@ -31,8 +31,7 @@ echo "************** Unlock keychain ****************"
 /usr/bin/security unlock-keychain -p user ${KEYCHAIN}
 /usr/bin/security find-identity -p codesigning -v
 
-pod init
-pod install
+
 
 
 # Build project
