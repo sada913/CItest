@@ -31,10 +31,14 @@ echo "************** Unlock keychain ****************"
 /usr/bin/security unlock-keychain -p user ${KEYCHAIN}
 /usr/bin/security find-identity -p codesigning -v
 
+pod init
+pod install
+
+
 # Build project
 echo "************** Build project ****************"
 BUILD_DIR=${WORKSPACE}/build
-/usr/bin/xcodebuild -scheme ${SCHEME} -workspace ${WORKSPACE}/project/Unity-iPhone.xcodeproj -sdk ${iOS_SDK} -configuration ${CONFIGURATION} clean build CODE_SIGN_IDENTITY="iPhone Developer" PROVISIONING_PROFILE=${MPNAME} CONFIGURATION_BUILD_DIR=${BUILD_DIR}
+/usr/bin/xcodebuild -scheme ${SCHEME} -workspace ${WORKSPACE}/project/Unity-iPhone.xcworkspace -sdk ${iOS_SDK} -configuration ${CONFIGURATION} clean build CODE_SIGN_IDENTITY="iPhone Developer" PROVISIONING_PROFILE=${MPNAME} CONFIGURATION_BUILD_DIR=${BUILD_DIR}
 
 # Create ipa
 echo "************** Create ipa file ****************"
