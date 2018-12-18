@@ -55,4 +55,39 @@ public class MyBuilder {
 			// エラー処理
 		}
 	}
+
+    [UnityEditor.MenuItem("Tools/Build Project AllScene Win")]
+    public static void BuildProjectAllSceneWin()
+    {
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
+        List<string> allScene = new List<string>();
+        foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+        {
+            if (scene.enabled)
+            {
+                allScene.Add(scene.path);
+            }
+        }
+
+        BuildOptions opt = BuildOptions.SymlinkLibraries |
+                           BuildOptions.AllowDebugging |
+                           BuildOptions.ConnectWithProfiler |
+                           BuildOptions.Development;
+
+        //BUILD for Device
+        PlayerSettings.applicationIdentifier = "com.sdatoworks.newgame";
+        var errorMsg_Device = BuildPipeline.BuildPlayer(
+                        allScene.ToArray(),
+                        "build",
+                        BuildTarget.StandaloneWindows64, opt
+                                 );
+
+        if (errorMsg_Device.summary.result == UnityEditor.Build.Reporting.BuildResult.Failed)
+        {
+        }
+        else
+        {
+            // エラー処理
+        }
+    }
 }
