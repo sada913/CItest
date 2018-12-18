@@ -78,7 +78,7 @@ public class MyBuilder {
         PlayerSettings.applicationIdentifier = "com.sdatoworks.newgame";
         var errorMsg_Device = BuildPipeline.BuildPlayer(
                         allScene.ToArray(),
-                        "build",
+                        "build/build.exe",
                         BuildTarget.StandaloneWindows64, opt
                                  );
 
