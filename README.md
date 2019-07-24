@@ -1,5 +1,3 @@
 # ARKitSample
 ARKitのテスト
 
-
-aa
