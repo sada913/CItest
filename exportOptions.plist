@@ -3,10 +3,6 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>enterprise</string>
-    <key>compileBitcode</key>
-    <false/>
-    <key>embedOnDemandResourcesAssetPacksInBundle</key>
-    <true/>
+    <string>ad-hoc</string>
 </dict>
 </plist>
